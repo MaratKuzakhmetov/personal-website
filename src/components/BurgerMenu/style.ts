@@ -1,8 +1,11 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 
+interface BurgerButtonProps {
+    isOpen: boolean;
+}
 
-export const BurgerButton = styled.button`
+export const BurgerButton = styled.button<BurgerButtonProps>`
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -33,19 +36,19 @@ export const BurgerButton = styled.button`
 
         &:first-of-type {
             transform: ${({ isOpen }) =>
-                isOpen ? 'rotate(45deg)' : 'rotate(0)'};
+        isOpen ? 'rotate(45deg)' : 'rotate(0)'};
         }
 
         &:nth-of-type(2) {
             opacity: ${({ isOpen }) =>
-                isOpen ? '0' : '1'};
+        isOpen ? '0' : '1'};
             transform: ${({ isOpen }) =>
-                isOpen ? 'translateX(20px)' : 'translateX(0)'};
+        isOpen ? 'translateX(20px)' : 'translateX(0)'};
         }
 
         &:nth-of-type(3) {
             transform: ${({ isOpen }) =>
-                isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+        isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
         }
     }
 `

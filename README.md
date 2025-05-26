@@ -25,16 +25,19 @@ A modern, multilingual personal website built with Next.js, featuring dark mode 
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 ```
 
 2. Install dependencies:
+
 ```bash
 yarn install
 ```
 
 3. Run the development server:
+
 ```bash
 yarn dev
 ```

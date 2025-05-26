@@ -1,32 +1,32 @@
 {
-    "title": "Ich erstelle Webseiten.",
-    "intro": {
-        "greeting": "Hallo, ich heiße Marat",
-        "description": "Ich bin ein Softwareentwickler mit Leidenschaft für die Erstellung schöner und funktionaler Web-Erlebnisse."
+  "title": "Ich erstelle Webseiten.",
+  "intro": {
+    "greeting": "Hallo, ich heiße Marat",
+    "description": "Ich bin ein Softwareentwickler mit Leidenschaft für die Erstellung schöner und funktionaler Web-Erlebnisse."
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte"
+  },
+  "theme": {
+    "light": "Heller Modus",
+    "dark": "Dunkler Modus"
+  },
+  "footer": {
+    "copyright": "© 2024 Alle Rechte vorbehalten"
+  },
+  "about": {
+    "title": "Über mich",
+    "intro": "Ich bin ein Full-Stack-Entwickler mit Leidenschaft für die Erstellung moderner Webanwendungen. Mit mehrjähriger Erfahrung in der Softwareentwicklung spezialisiere ich mich auf den Aufbau responsiver, benutzerfreundlicher Websites und Anwendungen.",
+    "background": "Meine Reise in der Softwareentwicklung begann mit einer soliden Grundlage in der Informatik, und seitdem habe ich an verschiedenen Projekten gearbeitet, von Websites für kleine Unternehmen bis hin zu komplexen Unternehmensanwendungen. Ich lerne ständig dazu und bleibe über die neuesten Technologien und Best Practices auf dem Laufenden.",
+    "skills": {
+      "title": "Fähigkeiten & Expertise",
+      "intro": "Ich arbeite mit verschiedenen Technologien und Tools über den gesamten Stack. Hier sind einige meiner wichtigsten Expertenbereiche:"
     },
-    "nav": {
-        "home": "Startseite",
-        "about": "Über mich",
-        "projects": "Projekte"
-    },
-    "theme": {
-        "light": "Heller Modus",
-        "dark": "Dunkler Modus"
-    },
-    "footer": {
-        "copyright": "© 2024 Alle Rechte vorbehalten"
-    },
-    "about": {
-        "title": "Über mich",
-        "intro": "Ich bin ein Full-Stack-Entwickler mit Leidenschaft für die Erstellung moderner Webanwendungen. Mit mehrjähriger Erfahrung in der Softwareentwicklung spezialisiere ich mich auf den Aufbau responsiver, benutzerfreundlicher Websites und Anwendungen.",
-        "background": "Meine Reise in der Softwareentwicklung begann mit einer soliden Grundlage in der Informatik, und seitdem habe ich an verschiedenen Projekten gearbeitet, von Websites für kleine Unternehmen bis hin zu komplexen Unternehmensanwendungen. Ich lerne ständig dazu und bleibe über die neuesten Technologien und Best Practices auf dem Laufenden.",
-        "skills": {
-            "title": "Fähigkeiten & Expertise",
-            "intro": "Ich arbeite mit verschiedenen Technologien und Tools über den gesamten Stack. Hier sind einige meiner wichtigsten Expertenbereiche:"
-        },
-        "interests": {
-            "title": "Jenseits des Codings",
-            "description": "Wenn ich nicht code, erkunde ich gerne neue Technologien, trage zu Open-Source-Projekten bei und teile Wissen mit der Entwickler-Community. Ich bin auch leidenschaftlich interessiert an User Experience Design und der Erstellung intuitiver Schnittstellen, die Technologie für jeden zugänglicher machen."
-        }
+    "interests": {
+      "title": "Jenseits des Codings",
+      "description": "Wenn ich nicht code, erkunde ich gerne neue Technologien, trage zu Open-Source-Projekten bei und teile Wissen mit der Entwickler-Community. Ich bin auch leidenschaftlich interessiert an User Experience Design und der Erstellung intuitiver Schnittstellen, die Technologie für jeden zugänglicher machen."
     }
+  }
 }

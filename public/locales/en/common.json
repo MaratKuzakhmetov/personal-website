@@ -1,32 +1,32 @@
 {
-    "title": "I make websites.",
-    "intro": {
-        "greeting": "Hello, my name is Marat",
-        "description": "I'm a software developer passionate about creating beautiful and functional web experiences."
+  "title": "I make websites.",
+  "intro": {
+    "greeting": "Hello, my name is Marat",
+    "description": "I'm a software developer passionate about creating beautiful and functional web experiences."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "footer": {
+    "copyright": "© 2024 All rights reserved"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm a full-stack developer with a passion for creating modern web applications. With several years of experience in software development, I specialize in building responsive, user-friendly websites and applications.",
+    "background": "My journey in software development began with a strong foundation in computer science, and I've since worked on various projects ranging from small business websites to complex enterprise applications. I'm constantly learning and staying up-to-date with the latest technologies and best practices.",
+    "skills": {
+      "title": "Skills & Expertise",
+      "intro": "I work with a variety of technologies and tools across the full stack. Here are some of my key areas of expertise:"
     },
-    "nav": {
-        "home": "Home",
-        "about": "About",
-        "projects": "Projects"
-    },
-    "theme": {
-        "light": "Light Mode",
-        "dark": "Dark Mode"
-    },
-    "footer": {
-        "copyright": "© 2024 All rights reserved"
-    },
-    "about": {
-        "title": "About Me",
-        "intro": "I'm a full-stack developer with a passion for creating modern web applications. With several years of experience in software development, I specialize in building responsive, user-friendly websites and applications.",
-        "background": "My journey in software development began with a strong foundation in computer science, and I've since worked on various projects ranging from small business websites to complex enterprise applications. I'm constantly learning and staying up-to-date with the latest technologies and best practices.",
-        "skills": {
-            "title": "Skills & Expertise",
-            "intro": "I work with a variety of technologies and tools across the full stack. Here are some of my key areas of expertise:"
-        },
-        "interests": {
-            "title": "Beyond Coding",
-            "description": "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community. I'm also passionate about user experience design and creating intuitive interfaces that make technology more accessible to everyone."
-        }
+    "interests": {
+      "title": "Beyond Coding",
+      "description": "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community. I'm also passionate about user experience design and creating intuitive interfaces that make technology more accessible to everyone."
     }
+  }
 }

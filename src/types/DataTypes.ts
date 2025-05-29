@@ -18,9 +18,15 @@ export interface Footer {
   copyright: string;
 }
 
+export interface CurrentSkill {
+  title: string;
+  description: string;
+}
+
 export interface Skills {
   title: string;
   intro: string;
+  currentSkills: Array<CurrentSkill>;
 }
 
 export interface Interests {

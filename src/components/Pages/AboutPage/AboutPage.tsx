@@ -18,30 +18,8 @@ interface AboutPageProps {
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
-  const skills = {
-    en: [
-      { title: 'Frontend', description: 'React, Next.js, TypeScript, CSS-in-JS' },
-      { title: 'Backend', description: 'Node.js, Express, Python, Django' },
-      { title: 'Database', description: 'PostgreSQL, MongoDB, Redis' },
-      { title: 'DevOps', description: 'Docker, AWS, CI/CD' },
-    ],
-    ru: [
-      { title: 'Фронтенд', description: 'React, Next.js, TypeScript, CSS-in-JS' },
-      { title: 'Бэкенд', description: 'Node.js, Express, Python, Django' },
-      { title: 'Базы данных', description: 'PostgreSQL, MongoDB, Redis' },
-      { title: 'DevOps', description: 'Docker, AWS, CI/CD' },
-    ],
-    de: [
-      { title: 'Frontend', description: 'React, Next.js, TypeScript, CSS-in-JS' },
-      { title: 'Backend', description: 'Node.js, Express, Python, Django' },
-      { title: 'Datenbank', description: 'PostgreSQL, MongoDB, Redis' },
-      { title: 'DevOps', description: 'Docker, AWS, CI/CD' },
-    ],
-  };
-
-  //   const currentSkills = skills[lang as keyof typeof skills] || skills.en;
-
   const { about } = data;
+  const currentSkills = about.skills.currentSkills;
 
   return (
     <div className={styles.aboutContainer}>
@@ -65,14 +43,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
         <motion.section className={styles.section} variants={itemVariants}>
           <h2 className={styles.sectionTitle}>{about.skills.title}</h2>
           <p className={styles.paragraph}>{about.skills.intro}</p>
-          {/* <div className={styles.skillsGrid}>
+          <div className={styles.skillsGrid}>
             {currentSkills.map(skill => (
               <motion.div key={skill.title} className={styles.skillCard} variants={itemVariants}>
                 <h3 className={styles.skillTitle}>{skill.title}</h3>
                 <p className={styles.skillDescription}>{skill.description}</p>
               </motion.div>
             ))}
-          </div> */}
+          </div>
         </motion.section>
 
         <motion.section className={styles.section} variants={itemVariants}>

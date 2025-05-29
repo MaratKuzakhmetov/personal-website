@@ -6,4 +6,4 @@ module.exports = {
   },
   defaultNS: 'common',
   localePath: './public/locales',
-};
+} 

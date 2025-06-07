@@ -1,16 +1,56 @@
 .root {
   position: relative;
-
   width: 100%;
   height: 100%;
 }
 
 .slide {
   display: block;
-
   width: 100%;
   height: auto;
-
   object-fit: contain;
   object-position: center;
+}
+
+/* Navigation buttons */
+.root :global(.custom-prev),
+.root :global(.custom-next) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root :global(.custom-prev)::before,
+.root :global(.custom-next)::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.root :global(.custom-prev) {
+  left: 20px;
+}
+
+.root :global(.custom-prev)::before {
+  transform: rotate(-135deg);
+}
+
+.root :global(.custom-next) {
+  right: 20px;
+}
+
+.root :global(.custom-next)::before {
+  transform: rotate(45deg);
 }

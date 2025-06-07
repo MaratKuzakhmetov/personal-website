@@ -1,5 +1,8 @@
 'use client';
 
+import { Slider } from '@/components/Slider/Slider';
+import { strasbourgImages } from '@/constants/strasbourg-images';
+
 import { motion } from 'framer-motion';
 import styles from './AboutPage.module.css';
 import { DataTypes } from '@/types/DataTypes';
@@ -56,6 +59,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
         <motion.section className={styles.section} variants={itemVariants}>
           <h2 className={styles.sectionTitle}>{about.interests.title}</h2>
           <p className={styles.paragraph}>{about.interests.description}</p>
+        </motion.section>
+
+        <motion.section className={styles.section} variants={itemVariants}>
+          <h2 className={styles.sectionTitle}>{about.travel.title}</h2>
+          <p className={styles.paragraph}>{about.travel.description}</p>
         </motion.section>
       </motion.div>
     </div>

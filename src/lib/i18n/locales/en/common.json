@@ -33,6 +33,10 @@
     "interests": {
       "title": "Beyond Coding",
       "description": "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community. I'm also passionate about user experience design and creating intuitive interfaces that make technology more accessible to everyone."
+    },
+    "travel": {
+      "title": "Travel",
+      "description": "I'm a travel enthusiast and have visited many countries around the world. I'm always looking for new places to explore and experience."
     }
   }
 }

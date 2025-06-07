@@ -11,7 +11,7 @@ import styles from './Slider.module.css';
 
 import { Pagination, Navigation } from 'swiper/modules';
 
-export const Slider = ({ images }: Array<ImageProps>) => {
+export const Slider = ({ images }: { images: ImageProps[] }) => {
   const width = images[0].dimensions.width;
   const height = images[0].dimensions.height;
   const aspectRatio = width / height;

@@ -34,12 +34,18 @@ export interface Interests {
   description: string;
 }
 
+export interface Travel {
+  title: string;
+  description: string;
+}
+
 export interface About {
   title: string;
   intro: string;
   background: string;
   skills: Skills;
   interests: Interests;
+  travel: Travel;
 }
 
 export interface DataTypes {

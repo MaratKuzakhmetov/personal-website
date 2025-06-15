@@ -1,0 +1,25 @@
+.root {
+  padding: 2rem 0;
+
+  border-top: 1px solid var(--color-gray-200);
+  background-color: var(--color-background);
+}
+
+[data-theme='dark'] .root {
+  border-color: var(--color-gray-800);
+  background-color: var(--color-gray-900);
+}
+
+.footer {
+  display: flex;
+}
+
+.footerText {
+  text-align: center;
+
+  color: var(--color-gray-500);
+}
+
+[data-theme='dark'] .footerText {
+  color: var(--color-gray-400);
+}

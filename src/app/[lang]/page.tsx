@@ -4,7 +4,9 @@ import { defaultLang, languages } from '@/lib/i18n/settings';
 import { notFound } from 'next/navigation';
 import { Layout } from '@/components/Layout';
 import { MainPage } from '@/components/Pages/MainPage';
-import { getContentBlocksByLang, getMainPageByLang } from '@/lib/sanity/queries';
+import { getMainPageByLang } from '@/lib/sanity/queries/mainPage';
+import { getContentBlocksByLang } from '@/lib/sanity/queries/contentBlocks';
+import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 
 type Params = { lang: string };
 
@@ -16,14 +18,14 @@ export default async function Home({ params }: { params: Params }) {
   }
 
   const dict = await getDictionary(lang || defaultLang);
-  const contentBlocks = await getContentBlocksByLang(lang);
-  const mainBlocks = await getMainPageByLang(lang);
-
-  console.log(contentBlocks);
-  console.log(mainBlocks);
+  const [contentBlocks, mainBlocks, globalSettings] = await Promise.all([
+    getContentBlocksByLang(lang),
+    getMainPageByLang(lang),
+    getGlobalSettingsByLang(lang),
+  ]);
 
   return (
-    <Layout data={dict}>
+    <Layout data={dict} globalSettings={globalSettings}>
       <MainPage data={dict} />
     </Layout>
   );

@@ -2,7 +2,7 @@ import { getDictionary } from '@/lib/i18n/dictionaries';
 import { languages, defaultLang } from '@/lib/i18n/settings';
 import { notFound } from 'next/navigation';
 import { Layout } from '@/components/Layout';
-import { AboutPage } from '@/components/Pages/AboutPage/AboutPage';
+import { AboutPage } from '@/components/Pages/AboutPage';
 
 type paramsType = Promise<{ lang: string }>;
 

@@ -1,3 +1,4 @@
+/* SIZES */
 /*  640 */
 $tablet: only screen and (min-width: 40em);
 
@@ -13,5 +14,6 @@ $wideDesktop: only screen and (min-width: 80em);
 /* 1728 */
 $largeDesktop: only screen and (min-width: 108em);
 
+/* FONTS */
 $fontPrimary: 'PF Regal Text Pro', 'Arial', sans-serif;
 $fontSecondary: 'Proxima Nova', 'Arial', sans-serif;

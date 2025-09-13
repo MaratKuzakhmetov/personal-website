@@ -1,37 +1,53 @@
 import { PortableText, PortableTextComponents } from 'next-sanity';
 import type { PortableTextBlock as PortableTextBlockType } from '@portabletext/types';
-
-const components: PortableTextComponents = {
-  block: {
-    normal: ({ children }) => <p>{children}</p>,
-    right: ({ children }) => <p style={{ textAlign: 'right' }}>{children}</p>,
-    blockquote: ({ children }) => <blockquote>{children}</blockquote>,
-  },
-  list: {
-    bullet: ({ children }) => <ul>{children}</ul>,
-  },
-  marks: {
-    link: ({ children, value }) => (
-      <a href={value.href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </a>
-    ),
-    textColor: ({ children, value }) => <span style={{ color: value.value }}>{children}</span>,
-    highlightColor: ({ children, value }) => (
-      <span style={{ background: value.value }}>{children}</span>
-    ),
-  },
-  listItem: ({ children }) => (
-    <li>
-      <span>{children}</span>
-    </li>
-  ),
-};
+import { makeClassName } from '@/utils/makeClassName';
+import styles from './PortableTextBlock.module.css';
 
 interface PortableTextBlockProps {
   content: PortableTextBlockType[];
+  type: 'mainPage' | 'aboutPage' | 'default';
 }
 
-export const PortableTextBlock = ({ content }: PortableTextBlockProps) => (
-  <PortableText value={content} components={components} />
-);
+export const PortableTextBlock = ({ content, type = 'default' }: PortableTextBlockProps) => {
+  const baseComponents: PortableTextComponents = {
+    block: {
+      normal: ({ children }) => <p>{children}</p>,
+      right: ({ children }) => <p style={{ textAlign: 'right' }}>{children}</p>,
+      blockquote: ({ children }) => <blockquote>{children}</blockquote>,
+    },
+    list: {
+      bullet: ({ children }) => <ul>{children}</ul>,
+    },
+    marks: {
+      link: ({ children, value }) => (
+        <a href={value.href} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      ),
+      textColor: ({ children, value }) => <span style={{ color: value.value }}>{children}</span>,
+      highlightColor: ({ children, value }) => (
+        <span style={{ background: value.value }}>{children}</span>
+      ),
+    },
+    listItem: ({ children }) => (
+      <li>
+        <span>{children}</span>
+      </li>
+    ),
+    types: {
+      subBlock: ({ value }) => (
+        <div
+          className={makeClassName([
+            [styles.subBlock, true],
+            [styles[type], type],
+          ])}
+        >
+          <h3>{value.title}</h3>
+          <PortableText value={value.blockContent ?? []} components={baseComponents} />
+        </div>
+      ),
+    },
+  };
+
+  return <PortableText value={content} components={baseComponents} />;
+};

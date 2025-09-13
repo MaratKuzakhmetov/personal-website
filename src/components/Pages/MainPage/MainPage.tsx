@@ -11,7 +11,7 @@ interface MainPageProps {
 }
 
 export const MainPage: React.FC<MainPageProps> = ({ data }) => {
-  // console.log('data.mainText', data.mainText);
+  console.log('data', data);
   return (
     <div className={styles.hero}>
       <motion.h1
@@ -28,8 +28,7 @@ export const MainPage: React.FC<MainPageProps> = ({ data }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        {/* <p dangerouslySetInnerHTML={{ __html: data.mainText }} /> */}
-        <PortableTextBlock content={data.mainText} />
+        <PortableTextBlock content={data.mainText} type="mainPage" />
       </motion.div>
     </div>
   );

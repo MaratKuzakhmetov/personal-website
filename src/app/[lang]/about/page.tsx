@@ -6,6 +6,7 @@ import { AboutPage } from '@/components/Pages/AboutPage';
 import { getMainPageByLang } from '@/lib/sanity/queries/mainPage';
 import { getContentBlocksByLang } from '@/lib/sanity/queries/contentBlocks';
 import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
+import { SlugType } from '@/types/DataTypes';
 
 type paramsType = Promise<{ lang: string }>;
 
@@ -23,13 +24,17 @@ export default async function Home(props: { params: paramsType }) {
     getGlobalSettingsByLang(lang),
   ]);
 
+  const contentAbout = contentBlocks.find(
+    (block: { slug: SlugType }) => block.slug.current === 'about'
+  );
+
   // console.log('contentBlocks', contentBlocks);
   // console.log('mainBlocks', mainBlocks);
   // console.log('globalSettings', globalSettings);
 
   return (
     <Layout data={dict} globalSettings={globalSettings}>
-      <AboutPage data={dict} />
+      <AboutPage data={contentAbout} />
     </Layout>
   );
 }

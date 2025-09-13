@@ -54,6 +54,18 @@ export interface DataTypes {
   about: About;
 }
 
+export interface SlugType {
+  _type: string;
+  current: string;
+}
+
+export interface AboutPageTypes {
+  content: PortableTextBlock[];
+  slug: SlugType;
+  title: string;
+  _id: string;
+}
+
 export interface SocialLinkTypes {
   platform: string;
   url: string;

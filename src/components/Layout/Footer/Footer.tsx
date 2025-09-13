@@ -4,9 +4,10 @@ import Link from 'next/link';
 import styles from './Footer.module.css';
 
 import { getCurrentYear } from '@/utils/getCurrentYear';
+import { FooterTypes } from '@/types/DataTypes';
 
 interface FooterProps {
-  data: any;
+  data: FooterTypes;
 }
 
 export const Footer: React.FC<FooterProps> = ({ data }) => {

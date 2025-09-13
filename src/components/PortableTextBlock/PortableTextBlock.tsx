@@ -1,4 +1,5 @@
 import { PortableText, PortableTextComponents } from 'next-sanity';
+import type { PortableTextBlock as PortableTextBlockType } from '@portabletext/types';
 
 const components: PortableTextComponents = {
   block: {
@@ -28,8 +29,7 @@ const components: PortableTextComponents = {
 };
 
 interface PortableTextBlockProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  content: any;
+  content: PortableTextBlockType[];
 }
 
 export const PortableTextBlock = ({ content }: PortableTextBlockProps) => (

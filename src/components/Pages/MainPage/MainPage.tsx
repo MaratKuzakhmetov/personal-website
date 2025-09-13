@@ -11,6 +11,7 @@ interface MainPageProps {
 }
 
 export const MainPage: React.FC<MainPageProps> = ({ data }) => {
+  // console.log('data.mainText', data.mainText);
   return (
     <div className={styles.hero}>
       <motion.h1

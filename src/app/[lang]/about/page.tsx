@@ -24,7 +24,7 @@ export default async function Home(props: { params: paramsType }) {
   ]);
 
   // console.log('contentBlocks', contentBlocks);
-  console.log('mainBlocks', mainBlocks);
+  // console.log('mainBlocks', mainBlocks);
   // console.log('globalSettings', globalSettings);
 
   return (

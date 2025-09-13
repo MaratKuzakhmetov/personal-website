@@ -8,9 +8,13 @@ import { getMainPageByLang } from '@/lib/sanity/queries/mainPage';
 import { getContentBlocksByLang } from '@/lib/sanity/queries/contentBlocks';
 import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 
-type Params = { lang: string };
+export interface LangPageProps {
+  params: Promise<{
+    lang: string;
+  }>;
+}
 
-export default async function Home({ params }: { params: Params }) {
+export default async function Home({ params }: LangPageProps) {
   const { lang } = await params;
 
   if (!languages.includes(lang)) {
@@ -25,7 +29,7 @@ export default async function Home({ params }: { params: Params }) {
   ]);
 
   // console.log('contentBlocks', contentBlocks);
-  console.log('mainBlocks', mainBlocks);
+  // console.log('mainBlocks', mainBlocks);
   // console.log('globalSettings', globalSettings);
 
   return (

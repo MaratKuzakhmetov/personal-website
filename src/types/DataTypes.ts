@@ -1,7 +1,4 @@
-export interface Intro {
-  greeting: string;
-  description: string;
-}
+import type { PortableTextBlock } from '@portabletext/types';
 
 export interface Nav {
   home: string;
@@ -49,10 +46,22 @@ export interface About {
 }
 
 export interface DataTypes {
-  title: string;
-  intro: Intro;
+  mainTitle: string;
+  mainText: PortableTextBlock[];
   nav: Nav;
   theme: Theme;
   footer: Footer;
   about: About;
+}
+
+export interface SocialLinkTypes {
+  platform: string;
+  url: string;
+}
+
+export interface FooterTypes {
+  copyrightText: string;
+  description: string;
+  logo: HTMLImageElement | null;
+  socialLinks: SocialLinkTypes[];
 }

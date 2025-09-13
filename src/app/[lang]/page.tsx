@@ -24,9 +24,13 @@ export default async function Home({ params }: { params: Params }) {
     getGlobalSettingsByLang(lang),
   ]);
 
+  // console.log('contentBlocks', contentBlocks);
+  console.log('mainBlocks', mainBlocks);
+  // console.log('globalSettings', globalSettings);
+
   return (
     <Layout data={dict} globalSettings={globalSettings}>
-      <MainPage data={dict} />
+      <MainPage data={mainBlocks} />
     </Layout>
   );
 }

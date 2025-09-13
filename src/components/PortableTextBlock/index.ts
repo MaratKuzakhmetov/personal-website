@@ -1,0 +1,1 @@
+export { PortableTextBlock } from './PortableTextBlock';

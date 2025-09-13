@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import styles from './MainPage.module.css';
 import { DataTypes } from '@/types/DataTypes';
 
+import { PortableTextBlock } from '@/components/PortableTextBlock';
+
 interface MainPageProps {
   data: DataTypes;
 }
@@ -17,7 +19,7 @@ export const MainPage: React.FC<MainPageProps> = ({ data }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {data.title}
+        {data.mainTitle}
       </motion.h1>
       <motion.div
         className={styles.description}
@@ -25,8 +27,8 @@ export const MainPage: React.FC<MainPageProps> = ({ data }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <p>{data.intro.greeting}</p>
-        <p>{data.intro.description}</p>
+        {/* <p dangerouslySetInnerHTML={{ __html: data.mainText }} /> */}
+        <PortableTextBlock content={data.mainText} />
       </motion.div>
     </div>
   );

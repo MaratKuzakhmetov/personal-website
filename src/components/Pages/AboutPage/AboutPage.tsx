@@ -23,10 +23,6 @@ interface AboutPageProps {
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
-  // const { about } = data;
-  // const currentSkills = about.skills.currentSkills;
-
-  console.log('data', data);
   return (
     <div className={styles.aboutContainer}>
       <motion.div

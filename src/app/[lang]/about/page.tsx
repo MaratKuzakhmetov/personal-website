@@ -28,10 +28,6 @@ export default async function Home(props: { params: paramsType }) {
     (block: { slug: SlugType }) => block.slug.current === 'about'
   );
 
-  // console.log('contentBlocks', contentBlocks);
-  // console.log('mainBlocks', mainBlocks);
-  // console.log('globalSettings', globalSettings);
-
   return (
     <Layout data={dict} globalSettings={globalSettings}>
       <AboutPage data={contentAbout} />

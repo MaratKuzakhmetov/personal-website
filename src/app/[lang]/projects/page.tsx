@@ -23,10 +23,6 @@ export default async function Home(props: { params: paramsType }) {
     getGlobalSettingsByLang(lang),
   ]);
 
-  // console.log('contentBlocks', contentBlocks);
-  // console.log('mainBlocks', mainBlocks);
-  // console.log('globalSettings', globalSettings);
-
   return (
     <Layout data={dict} globalSettings={globalSettings}>
       <AboutPage data={dict} />

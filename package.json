@@ -15,7 +15,6 @@
     "framer-motion": "^10.18.0",
     "i18next": "^24.2.3",
     "isomorphic-dompurify": "^2.26.0",
-    "lucide-react": "^0.544.0",
     "next": "15.2.4",
     "next-i18next": "^14.0.0",
     "next-sanity": "^10.0.16",

@@ -1,10 +1,12 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Link from 'next/link';
+import { NavLink } from '../Common/NavLink';
 import { useRouter, usePathname } from 'next/navigation';
 import { useParams } from 'next/navigation';
 import styles from './BurgerMenu.module.css';
 import { DataTypes } from '@/types/DataTypes';
+
+import { makeClassName } from '@/utils/makeClassName';
 
 import { LANGUAGES } from '@/utils/constants';
 import { generateNavLink } from '@/utils/generateNavLink';
@@ -58,30 +60,38 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
 
-  const handleClose = useCallback(() => {
-    setIsOpen(false);
-  }, []);
+  useEffect(() => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }, [pathname]);
 
   const handleNavigation = useCallback(
     (href: string) => {
-      router.push(href);
-      setTimeout(() => setIsOpen(false), 150);
-    },
-    [router]
-  );
+      if (pathname === href) {
+        setIsOpen(false);
+        return;
+      }
 
-  const pathname = usePathname();
-  const params = useParams();
+      router.push(href);
+    },
+    [router, pathname]
+  );
 
   const changeLanguage = useCallback(
     (lang: string) => {
       const segments = pathname.split('/');
       segments[1] = lang;
       const newPath = segments.join('/');
-      router.push(newPath);
 
-      setTimeout(() => setIsOpen(false), 150);
+      if (pathname === newPath) {
+        setIsOpen(false);
+        return;
+      }
+      router.push(newPath);
     },
     [pathname, router]
   );
@@ -109,40 +119,26 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ data }) => {
               variants={menuItemVariants}
               onClick={() => handleNavigation(generateNavLink(currentLang as string))}
             >
-              <Link href={generateNavLink(currentLang as string)} onClick={e => e.preventDefault()}>
-                {data.nav.home}
-              </Link>
+              <NavLink href={generateNavLink(currentLang as string)}>{data.nav.home}</NavLink>
             </motion.div>
             <motion.div
               className={styles.menuItem}
               variants={menuItemVariants}
               onClick={() => handleNavigation(generateNavLink(currentLang as string, 'about'))}
             >
-              <Link
-                href={generateNavLink(currentLang as string, 'about')}
-                onClick={e => e.preventDefault()}
-              >
+              <NavLink href={generateNavLink(currentLang as string, 'about')}>
                 {data.nav.about}
-              </Link>
-            </motion.div>
-            <motion.div
-              className={styles.menuItem}
-              variants={menuItemVariants}
-              onClick={() => handleNavigation(generateNavLink(currentLang as string, 'projects'))}
-            >
-              <Link
-                href={generateNavLink(currentLang as string, 'projects')}
-                onClick={e => e.preventDefault()}
-              >
-                {data.nav.projects}
-              </Link>
+              </NavLink>
             </motion.div>
             <motion.div className={styles.languageControls} variants={menuItemVariants}>
               {LANGUAGES.map(lang => (
                 <button
                   key={lang.code}
                   onClick={() => changeLanguage(lang.code)}
-                  className={`${styles.languageButton} ${currentLang === lang.code ? styles.active : ''}`}
+                  className={makeClassName([
+                    [styles.languageButton, true],
+                    [styles.active, currentLang === lang.code],
+                  ])}
                 >
                   {lang.name}
                 </button>

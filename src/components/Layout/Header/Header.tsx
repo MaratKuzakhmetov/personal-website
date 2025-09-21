@@ -1,7 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useEffect, useState } from 'react';
 import { useRouter, usePathname, useParams } from 'next/navigation';
 
 import { BurgerMenu } from '@/components/BurgerMenu';
@@ -15,10 +14,10 @@ import { generateNavLink } from '@/utils/generateNavLink';
 import styles from './Header.module.css';
 
 import { LANGUAGES } from '@/utils/constants';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher/ThemeSwitcher';
 
 export const Header = ({ data }) => {
   const [mounted, setMounted] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
@@ -36,15 +35,6 @@ export const Header = ({ data }) => {
     router.push(newPath);
   };
 
-  const renderThemeChanger = () => {
-    if (!mounted) return null;
-
-    return (
-      <button className={styles.themeButton} onClick={toggleTheme}>
-        {theme === 'dark' ? '🌞' : '🌙'}
-      </button>
-    );
-  };
   return (
     <header>
       <nav className={styles.navigation}>
@@ -83,7 +73,9 @@ export const Header = ({ data }) => {
                   </button>
                 ))}
               </div>
-              {renderThemeChanger()}
+              <div className={styles.switcher}>
+                <ThemeSwitcher />
+              </div>
               <BurgerMenu data={data} />
             </div>
           </div>

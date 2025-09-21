@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/context/ThemeContext';
+import { ThemeProvider } from 'next-themes';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -11,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem={true}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

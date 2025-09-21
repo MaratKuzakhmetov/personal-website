@@ -6,7 +6,10 @@ import { useRouter, usePathname, useParams } from 'next/navigation';
 
 import { BurgerMenu } from '@/components/BurgerMenu';
 
+import { makeClassName } from '@/utils/makeClassName';
+
 import Link from 'next/link';
+import { NavLink } from '@/components/Common/NavLink';
 import Image from 'next/image';
 import { generateNavLink } from '@/utils/generateNavLink';
 import styles from './Header.module.css';
@@ -48,7 +51,7 @@ export const Header = ({ data }) => {
         <div className="container">
           <div className={styles.navContainer}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Link href="/" className={styles.logo}>
+              <Link href={generateNavLink(currentLang as string)} className={styles.logo}>
                 <Image
                   src="/images/title.jpeg"
                   alt="Marat Kuzakhmetov"
@@ -59,21 +62,10 @@ export const Header = ({ data }) => {
                 <span>Marat Kuzakhmetov</span>
               </Link>
               <div className={styles.navLinks}>
-                <Link href={generateNavLink(currentLang as string)} className={styles.navLink}>
-                  {data.nav.home}
-                </Link>
-                <Link
-                  href={generateNavLink(currentLang as string, 'about')}
-                  className={styles.navLink}
-                >
+                <NavLink href={generateNavLink(currentLang as string)}>{data.nav.home}</NavLink>
+                <NavLink href={generateNavLink(currentLang as string, 'about')}>
                   {data.nav.about}
-                </Link>
-                <Link
-                  href={generateNavLink(currentLang as string, 'projects')}
-                  className={styles.navLink}
-                >
-                  {data.nav.projects}
-                </Link>
+                </NavLink>
               </div>
             </div>
             <div className={styles.controls}>
@@ -82,7 +74,10 @@ export const Header = ({ data }) => {
                   <button
                     key={lang.code}
                     onClick={() => changeLanguage(lang.code)}
-                    className={`${styles.languageButton} ${currentLang === lang.code ? styles.active : ''}`}
+                    className={makeClassName([
+                      [styles.languageButton, true],
+                      [styles.active, currentLang === lang.code],
+                    ])}
                   >
                     {lang.name}
                   </button>

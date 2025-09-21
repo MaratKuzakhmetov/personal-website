@@ -1,0 +1,33 @@
+.link {
+  position: relative;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  height: 4px;
+  width: 0;
+  background-color: transparent;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+  background-color: #ccc;
+}
+
+.active::after {
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
+.active:hover::after {
+  background-color: var(--color-primary);
+}

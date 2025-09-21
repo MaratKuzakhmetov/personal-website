@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
         <div className={styles.contacts}>
           {data.socialLinks &&
             data.socialLinks.map(link => (
-              <Link key={link.platform} href={link.url} target="_blank">
+              <Link key={link.platform} href={link.url} target="_blank" className={styles.link}>
                 {link.platform}
               </Link>
             ))}

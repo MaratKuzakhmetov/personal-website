@@ -1,23 +1,19 @@
 @import '../../../styles/vars.css';
 
-.hero {
+.root {
   min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
 }
 
 .title {
-  font-size: 2.25rem;
+  font-size: 1.1875rem;
   font-weight: bold;
-  color: var(--color-text);
+  color: var(--color-primary);
   margin-bottom: 1rem;
-
-  @media $wideTablet {
-    font-size: 3.75rem;
-  }
+  text-transform: uppercase;
 }
 
 [data-theme='dark'] .title {
@@ -25,11 +21,10 @@
 }
 
 .description {
-  font-size: 1.25rem;
-  color: var(--color-gray-600);
+  font-size: 2.5rem;
 
   @media $wideTablet {
-    font-size: 1.5rem;
+    font-size: 5.875rem;
   }
 }
 
@@ -39,4 +34,23 @@
 
 .description p + p {
   margin-top: 0.5rem;
+}
+
+.description h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+
+  @media $wideTablet {
+    font-size: 5.875rem;
+  }
+}
+
+.description h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  @media $wideTablet {
+    font-size: 2rem;
+  }
 }

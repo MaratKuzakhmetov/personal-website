@@ -77,3 +77,20 @@ export interface FooterTypes {
   logo: HTMLImageElement | null;
   socialLinks: SocialLinkTypes[];
 }
+
+export interface NavLangDataTypes {
+  link: string;
+  title: string;
+}
+
+export interface NavLangTypes {
+  home: NavLangDataTypes;
+  about: NavLangDataTypes;
+}
+
+export interface NavData {
+  en: NavLangTypes;
+  de: NavLangTypes;
+}
+
+export type Languages = 'en' | 'de';

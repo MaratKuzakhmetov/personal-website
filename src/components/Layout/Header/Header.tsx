@@ -16,7 +16,11 @@ import styles from './Header.module.css';
 import { LANGUAGES } from '@/utils/constants';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher/ThemeSwitcher';
 
-export const Header = ({ data }) => {
+import { Languages } from '@/types/DataTypes';
+
+import { headerData } from './headerData';
+
+export const Header = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -26,7 +30,9 @@ export const Header = ({ data }) => {
 
   const params = useParams();
 
-  const currentLang = params?.lang;
+  const currentLang = params?.lang as Languages;
+
+  const navData = headerData[currentLang];
 
   const changeLanguage = (lang: string) => {
     const segments = pathname.split('/');
@@ -41,7 +47,7 @@ export const Header = ({ data }) => {
         <div className="container">
           <div className={styles.navContainer}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Link href={generateNavLink(currentLang as string)} className={styles.logo}>
+              <Link href={generateNavLink(currentLang, navData.home.link)} className={styles.logo}>
                 <Image
                   src="/images/title.jpeg"
                   alt="Marat Kuzakhmetov"
@@ -52,9 +58,11 @@ export const Header = ({ data }) => {
                 <span>Marat Kuzakhmetov</span>
               </Link>
               <div className={styles.navLinks}>
-                <NavLink href={generateNavLink(currentLang as string)}>{data.nav.home}</NavLink>
-                <NavLink href={generateNavLink(currentLang as string, 'about')}>
-                  {data.nav.about}
+                <NavLink href={generateNavLink(currentLang, navData.home.link)}>
+                  {navData.home.title}
+                </NavLink>
+                <NavLink href={generateNavLink(currentLang, navData.about.link)}>
+                  {navData.about.title}
                 </NavLink>
               </div>
             </div>
@@ -76,7 +84,7 @@ export const Header = ({ data }) => {
               <div className={styles.switcher}>
                 <ThemeSwitcher />
               </div>
-              <BurgerMenu data={data} />
+              <BurgerMenu navData={navData} currentLang={currentLang} />
             </div>
           </div>
         </div>

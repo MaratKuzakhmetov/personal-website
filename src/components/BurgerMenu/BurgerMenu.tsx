@@ -2,9 +2,8 @@ import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NavLink } from '../Common/NavLink';
 import { useRouter, usePathname } from 'next/navigation';
-import { useParams } from 'next/navigation';
 import styles from './BurgerMenu.module.css';
-import { DataTypes } from '@/types/DataTypes';
+import { NavLangTypes, Languages } from '@/types/DataTypes';
 
 import { makeClassName } from '@/utils/makeClassName';
 
@@ -12,7 +11,8 @@ import { LANGUAGES } from '@/utils/constants';
 import { generateNavLink } from '@/utils/generateNavLink';
 
 interface BurgerMenuProps {
-  data: DataTypes;
+  navData: NavLangTypes;
+  currentLang: Languages;
 }
 
 const menuVariants = {
@@ -56,12 +56,11 @@ const menuItemVariants = {
   },
 };
 
-export const BurgerMenu: React.FC<BurgerMenuProps> = ({ data }) => {
+export const BurgerMenu: React.FC<BurgerMenuProps> = ({ navData, currentLang }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
 
   useEffect(() => {
     if (isOpen) {
@@ -96,8 +95,6 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ data }) => {
     [pathname, router]
   );
 
-  const currentLang = params?.lang;
-
   return (
     <>
       <button className={styles.burgerButton} data-open={isOpen} onClick={() => setIsOpen(!isOpen)}>
@@ -117,17 +114,19 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ data }) => {
             <motion.div
               className={styles.menuItem}
               variants={menuItemVariants}
-              onClick={() => handleNavigation(generateNavLink(currentLang as string))}
+              onClick={() => handleNavigation(generateNavLink(currentLang, navData.home.link))}
             >
-              <NavLink href={generateNavLink(currentLang as string)}>{data.nav.home}</NavLink>
+              <NavLink href={generateNavLink(currentLang, navData.home.link)}>
+                {navData.home.title}
+              </NavLink>
             </motion.div>
             <motion.div
               className={styles.menuItem}
               variants={menuItemVariants}
-              onClick={() => handleNavigation(generateNavLink(currentLang as string, 'about'))}
+              onClick={() => handleNavigation(generateNavLink(currentLang, navData.about.link))}
             >
-              <NavLink href={generateNavLink(currentLang as string, 'about')}>
-                {data.nav.about}
+              <NavLink href={generateNavLink(currentLang, navData.about.link)}>
+                {navData.about.title}
               </NavLink>
             </motion.div>
             <motion.div className={styles.languageControls} variants={menuItemVariants}>

@@ -3,18 +3,18 @@ import { ReactNode } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import styles from './Layout.module.css';
-import { DataTypes } from '@/types/DataTypes';
 
 interface LayoutProps {
-  data: DataTypes;
   globalSettings: any;
   children: ReactNode;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ data, globalSettings, children }) => {
+export const Layout: React.FC<LayoutProps> = ({ globalSettings, children }) => {
+  // console.log('Layout render, globalSettings =', globalSettings);
+  // console.trace();
   return (
     <div className={styles.layoutWrapper}>
-      <Header data={data} />
+      <Header />
 
       <main className={styles.main}>
         <div className="container">

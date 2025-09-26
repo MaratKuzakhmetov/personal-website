@@ -10,8 +10,6 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ globalSettings, children }) => {
-  // console.log('Layout render, globalSettings =', globalSettings);
-  // console.trace();
   return (
     <div className={styles.layoutWrapper}>
       <Header />

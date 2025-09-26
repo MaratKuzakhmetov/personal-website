@@ -5,12 +5,13 @@ import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 import { SlugType } from '@/types/DataTypes';
 
 export interface LangPageProps {
-  params: {
+  params: Promise<{
     lang: string;
-  };
+  }>;
 }
 
-export default async function Home({ params }: LangPageProps) {
+export default async function Home(props: LangPageProps) {
+  const params = await props.params;
   const { lang } = params;
 
   const [contentBlocks, globalSettings] = await Promise.all([

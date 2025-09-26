@@ -2,23 +2,19 @@ import React from 'react';
 import { Layout } from '@/components/Layout';
 import { MainPage } from '@/components/Pages/MainPage';
 import { getMainPageByLang } from '@/lib/sanity/queries/mainPage';
-import { getContentBlocksByLang } from '@/lib/sanity/queries/contentBlocks';
 import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 
 export interface LangPageProps {
-  params: {
+  params: Promise<{
     lang: string;
-  };
+  }>;
 }
 
-export default async function Home({ params }: LangPageProps) {
-  console.log('params.lang =', params.lang);
+export default async function Home(props: LangPageProps) {
+  const params = await props.params;
   const { lang } = params;
 
-  console.log('lang', lang);
-
-  const [contentBlocks, mainBlocks, globalSettings] = await Promise.all([
-    getContentBlocksByLang(lang),
+  const [mainBlocks, globalSettings] = await Promise.all([
     getMainPageByLang(lang),
     getGlobalSettingsByLang(lang),
   ]);

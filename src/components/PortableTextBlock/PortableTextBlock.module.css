@@ -4,6 +4,12 @@
   margin: 20px 0;
 }
 
-.aboutPage {
-  margin: 10px 0;
+.subBlock h3 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--color-text);
+}
+
+.subBlock ul {
+  margin: 15px 0;
+  margin-left: 15px;
 }

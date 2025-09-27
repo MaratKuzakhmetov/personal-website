@@ -38,5 +38,9 @@
   },
   "engines": {
     "node": ">=18.17.0"
+  },
+  "resolutions": {
+    "postcss": "^8.4.35",
+    "sanity": "^3.59.0"
   }
 }

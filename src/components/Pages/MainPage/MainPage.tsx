@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
 
 import styles from './MainPage.module.css';
-import { DataTypes } from '@/types/DataTypes';
+import { DataTypes, Languages } from '@/types/DataTypes';
 
 import { PortableTextBlock } from '@/components/PortableTextBlock';
 import { generateNavLink } from '@/utils/generateNavLink';
@@ -17,7 +17,7 @@ interface MainPageProps {
 export const MainPage: React.FC<MainPageProps> = ({ data }) => {
   const params = useParams();
 
-  const currentLang = params?.lang;
+  const currentLang = params?.lang as Languages;
   return (
     <div className={styles.root}>
       <motion.h1
@@ -26,7 +26,7 @@ export const MainPage: React.FC<MainPageProps> = ({ data }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Link href={generateNavLink(currentLang as string, 'about')}>{data.mainTitle}</Link>
+        <Link href={generateNavLink(currentLang, 'about')}>{data.mainTitle}</Link>
       </motion.h1>
       <motion.div
         className={styles.description}

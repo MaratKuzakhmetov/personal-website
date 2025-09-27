@@ -1,14 +1,16 @@
-FROM node:20.19.0-alpine
-RUN apk add --no-cache bash
-RUN rm -f /usr/local/bin/yarn /usr/local/bin/yarnpkg && npm install -g yarn
-RUN mkdir /code
-RUN export
-ADD yarn.lock /code/yarn.lock
-ADD package.json /code/package.json
-WORKDIR /code
-RUN yarn install
+FROM node:20.19.0-alpine AS builder
+RUN corepack enable && corepack prepare pnpm@latest --activate
+WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+COPY . .
+RUN pnpm next telemetry disable && pnpm build
+
+# --- Runtime stage ---
+FROM node:20.19.0-alpine AS runner
+WORKDIR /app
 ENV NODE_ENV=production
-COPY . /code/
-RUN yarn next telemetry disable && yarn build
+RUN corepack enable && corepack prepare pnpm@latest --activate
+COPY --from=builder /app ./
 EXPOSE 3000
-CMD ["yarn", "start"]
+CMD ["pnpm", "start"]

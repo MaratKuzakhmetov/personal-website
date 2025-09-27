@@ -10,6 +10,8 @@ export interface LangPageProps {
   }>;
 }
 
+export const runtime = 'edge';
+
 export default async function Home(props: LangPageProps) {
   const params = await props.params;
   const { lang } = params;

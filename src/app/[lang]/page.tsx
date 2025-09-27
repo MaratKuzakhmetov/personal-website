@@ -4,6 +4,8 @@ import { MainPage } from '@/components/Pages/MainPage';
 import { getMainPageByLang } from '@/lib/sanity/queries/mainPage';
 import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 
+export const runtime = 'edge';
+
 export interface LangPageProps {
   params: Promise<{
     lang: string;

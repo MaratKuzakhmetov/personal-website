@@ -2,7 +2,6 @@
 
 :root {
   --color-primary: #3182ce;
-  --color-primary-dark: #60a5fa;
   --color-background: #ffffff;
   /* --color-background-block-about-1: #ffffff;
   --color-background-block-about-2: #fef7f1;
@@ -54,7 +53,7 @@ body {
 }
 
 [data-theme='dark'] {
-  --color-primary: #63b3ed;
+  --color-primary: #589ddb;
   --color-background: #1a202c;
   /* --color-background-block-about-1: #1a202c;
   --color-background-block-about-2: #2d3748;

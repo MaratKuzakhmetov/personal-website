@@ -1,0 +1,14 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    tags:
+      - 'production-*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy
+        run: |
+          curl -X POST "${{ secrets.CF_DEPLOY_HOOK_URL }}"

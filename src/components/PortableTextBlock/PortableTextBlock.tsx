@@ -1,7 +1,6 @@
 import { PortableText, PortableTextComponents } from 'next-sanity';
 import type { PortableTextBlock as PortableTextBlockType } from '@portabletext/types';
 import { makeClassName } from '@/utils/makeClassName';
-import { motion } from 'framer-motion';
 import styles from './PortableTextBlock.module.css';
 
 interface PortableTextBlockProps {
@@ -44,28 +43,13 @@ export const PortableTextBlock = ({ content, type = 'default' }: PortableTextBlo
               [styles.subBlock, true],
               [styles[type], type],
             ])}
-            // style={{ background: value?.background } as React.CSSProperties}
           >
             <div className={styles.container}>
-              <motion.h3
-                className={styles.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.5 }}
-              >
-                {value.title}
-              </motion.h3>
+              <h3 className={styles.title}>{value.title}</h3>
 
-              <motion.div
-                className={styles.description}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
+              <div className={styles.description}>
                 <PortableText value={value.blockContent ?? []} components={baseComponents} />
-              </motion.div>
+              </div>
             </div>
           </div>
         );

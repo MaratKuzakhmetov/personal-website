@@ -6,11 +6,3 @@
   color: var(--color-text);
   background-color: var(--color-background);
 }
-
-.main {
-  padding-top: 4rem;
-}
-
-.mainContent {
-  padding: 2rem 0;
-}

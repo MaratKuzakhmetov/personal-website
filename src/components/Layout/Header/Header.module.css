@@ -1,9 +1,6 @@
 @import '../../../styles/vars.css';
 
 .navigation {
-  position: fixed;
-  z-index: 50;
-
   width: 100%;
 
   background-color: var(--color-background);
@@ -12,6 +9,30 @@
 
 [data-theme='dark'] .navigation {
   background-color: var(--color-gray-900);
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media $tablet {
+    max-width: 640px;
+  }
+
+  @media $wideTablet {
+    max-width: 768px;
+  }
+
+  @media $desktop {
+    max-width: 1024px;
+  }
+
+  @media $wideDesktop {
+    max-width: 1280px;
+  }
 }
 
 .navContainer {

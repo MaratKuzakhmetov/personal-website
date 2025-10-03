@@ -1,15 +1,119 @@
 @import '../../styles/vars.css';
 
 .subBlock {
-  margin: 20px 0;
+  margin: 0;
 }
 
 .subBlock h3 {
   margin-bottom: 10px;
-  border-bottom: 2px solid var(--color-text);
 }
 
 .subBlock ul {
   margin: 15px 0;
   margin-left: 15px;
+}
+
+.subBlock.aboutPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: 0;
+}
+
+.subBlock.aboutPage:nth-child(1) {
+  background: var(--color-background-block-about-1);
+}
+
+.subBlock.aboutPage:nth-child(2) {
+  background: var(--color-background-block-about-2);
+}
+
+.subBlock.aboutPage:nth-child(3) {
+  background: var(--color-background-block-about-3);
+}
+
+.subBlock.aboutPage:nth-child(4) {
+  background: var(--color-background-block-about-4);
+}
+
+.subBlock.aboutPage:nth-child(5) {
+  background: var(--color-background-block-about-5);
+}
+
+.subBlock.aboutPage:nth-child(6) {
+  background: var(--color-background-block-about-6);
+}
+
+.subBlock.aboutPage .title {
+  font-size: 1.1875rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+[data-theme='dark'] .subBlock.aboutPage .title {
+  color: var(--color-text-dark);
+}
+
+.subBlock.aboutPage .description {
+  font-size: 1.5rem;
+
+  @media $wideTablet {
+    font-size: 2rem;
+  }
+}
+
+[data-theme='dark'] .subBlock.aboutPage .description {
+  color: var(--color-gray-300);
+}
+
+.subBlock.aboutPage .description p + p {
+  margin-top: 0.5rem;
+}
+
+.subBlock.aboutPage .description h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+
+  @media $wideTablet {
+    font-size: 5.875rem;
+  }
+}
+
+.subBlock.aboutPage .description h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  @media $wideTablet {
+    font-size: 2rem;
+  }
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media $tablet {
+    max-width: 640px;
+  }
+
+  @media $wideTablet {
+    max-width: 768px;
+  }
+
+  @media $desktop {
+    max-width: 1024px;
+  }
+
+  @media $wideDesktop {
+    max-width: 1280px;
+  }
 }

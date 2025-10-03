@@ -4,6 +4,18 @@
   --color-primary: #3182ce;
   --color-primary-dark: #60a5fa;
   --color-background: #ffffff;
+  /* --color-background-block-about-1: #ffffff;
+  --color-background-block-about-2: #fef7f1;
+  --color-background-block-about-3: #f3f8ff;
+  --color-background-block-about-4: #f7f5ff;
+  --color-background-block-about-5: #f1faf5;
+  --color-background-block-about-6: #ffffff; */
+  /* --color-background-block-about-1: linear-gradient(to bottom, #ffffff 0%, #f0f8ff 100%);
+  --color-background-block-about-2: linear-gradient(to bottom, #f0f8ff 0%, #d6ecfa 100%);
+  --color-background-block-about-3: linear-gradient(to bottom, #d6ecfa 0%, #4379b2 100%);
+  --color-background-block-about-4: linear-gradient(to bottom, #4379b2 0%, #d6ecfa 100%);
+  --color-background-block-about-5: linear-gradient(to bottom, #d6ecfa 0%, #f0f8ff 100%);
+  --color-background-block-about-6: linear-gradient(to bottom, #f0f8ff 0%, #ffffff 100%); */
   --color-background-dark: #1a202c;
   --color-text: #1a202c;
   --color-text-dark: #f7fafc;
@@ -44,6 +56,12 @@ body {
 [data-theme='dark'] {
   --color-primary: #63b3ed;
   --color-background: #1a202c;
+  /* --color-background-block-about-1: #1a202c;
+  --color-background-block-about-2: #2d3748;
+  --color-background-block-about-3: #2c313d;
+  --color-background-block-about-4: #242933;
+  --color-background-block-about-5: #1f252f;
+  --color-background-block-about-6: #1a202c; */
   --color-text: #f7fafc;
   --color-gray-100: #2d3748;
   --color-gray-200: #2d3748;
@@ -61,28 +79,4 @@ button {
   border: none;
   background: none;
   font: inherit;
-}
-
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-  @media $tablet {
-    max-width: 640px;
-  }
-
-  @media $wideTablet {
-    max-width: 768px;
-  }
-
-  @media $desktop {
-    max-width: 1024px;
-  }
-
-  @media $wideDesktop {
-    max-width: 1280px;
-  }
 }

@@ -20,22 +20,24 @@ export const MainPage: React.FC<MainPageProps> = ({ data }) => {
   const currentLang = params?.lang as Languages;
   return (
     <div className={styles.root}>
-      <motion.h1
-        className={styles.title}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Link href={generateNavLink(currentLang, 'about')}>{data.mainTitle}</Link>
-      </motion.h1>
-      <motion.div
-        className={styles.description}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <PortableTextBlock content={data.mainText} type="mainPage" />
-      </motion.div>
+      <div className={styles.container}>
+        <motion.h1
+          className={styles.title}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link href={generateNavLink(currentLang, 'about')}>{data.mainTitle}</Link>
+        </motion.h1>
+        <motion.div
+          className={styles.description}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <PortableTextBlock content={data.mainText} type="mainPage" />
+        </motion.div>
+      </div>
     </div>
   );
 };

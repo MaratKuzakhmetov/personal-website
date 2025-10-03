@@ -1,11 +1,11 @@
 @import '../../../styles/vars.css';
 
 .root {
-  min-height: calc(100vh - 4rem);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  margin-top: 6rem;
 }
 
 .title {
@@ -52,5 +52,29 @@
 
   @media $wideTablet {
     font-size: 2rem;
+  }
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media $tablet {
+    max-width: 640px;
+  }
+
+  @media $wideTablet {
+    max-width: 768px;
+  }
+
+  @media $desktop {
+    max-width: 1024px;
+  }
+
+  @media $wideDesktop {
+    max-width: 1280px;
   }
 }

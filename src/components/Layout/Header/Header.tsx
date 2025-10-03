@@ -42,7 +42,7 @@ export const Header = () => {
   return (
     <header>
       <nav className={styles.navigation}>
-        <div className="container">
+        <div className={styles.container}>
           <div className={styles.navContainer}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Link href={generateNavLink(currentLang, navData.home.link)} className={styles.logo}>

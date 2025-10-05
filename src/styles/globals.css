@@ -3,12 +3,12 @@
 :root {
   --color-primary: #3182ce;
   --color-background: #ffffff;
-  /* --color-background-block-about-1: #ffffff;
+  --color-background-block-about-1: #ffffff;
   --color-background-block-about-2: #fef7f1;
   --color-background-block-about-3: #f3f8ff;
   --color-background-block-about-4: #f7f5ff;
   --color-background-block-about-5: #f1faf5;
-  --color-background-block-about-6: #ffffff; */
+  --color-background-block-about-6: #ffffff;
   /* --color-background-block-about-1: linear-gradient(to bottom, #ffffff 0%, #f0f8ff 100%);
   --color-background-block-about-2: linear-gradient(to bottom, #f0f8ff 0%, #d6ecfa 100%);
   --color-background-block-about-3: linear-gradient(to bottom, #d6ecfa 0%, #4379b2 100%);

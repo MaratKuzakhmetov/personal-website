@@ -1,4 +1,5 @@
 import { sanityClient } from '../sanity.config';
+import { imageFragment } from '../fragments/imageFragment';
 
 export async function getContentBlocksByLang(lang: string) {
   const typeMap: Record<string, string> = {
@@ -14,7 +15,25 @@ export async function getContentBlocksByLang(lang: string) {
         _id,
         title,
         slug,
-        content
+        content[]{
+          ...,
+          _type == "image" => {
+            _type,
+            _key,
+            ${imageFragment}
+          },
+          _type == "subBlock" => {
+            ...,
+            blockContent[]{
+              ...,
+              _type == "image" => {
+                _type,
+                _key,
+                ${imageFragment}
+              }
+            }
+          }
+        }
       }`,
     { type: blockType }
   );

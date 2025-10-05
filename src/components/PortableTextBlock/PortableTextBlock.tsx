@@ -54,6 +54,17 @@ export const PortableTextBlock = ({ content, type = 'default' }: PortableTextBlo
           </div>
         );
       },
+      image: ({ value }) => {
+        const { src, alt, dimensions } = value;
+        return (
+          <img
+            src={src}
+            alt={alt || ''}
+            width={dimensions?.width || 600}
+            height={dimensions?.height || 400}
+          />
+        );
+      },
     },
   };
 

@@ -56,7 +56,6 @@ body[data-menu-open='true'] {
   overflow: hidden;
   position: fixed;
   width: 100%;
-  touch-action: none;
 }
 
 [data-theme='dark'] {

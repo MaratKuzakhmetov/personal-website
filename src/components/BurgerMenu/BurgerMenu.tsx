@@ -63,6 +63,13 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ navData, currentLang }) 
   const pathname = usePathname();
 
   useEffect(() => {
+    document.body.dataset.menuOpen = isOpen ? 'true' : 'false';
+    return () => {
+      delete document.body.dataset.menuOpen;
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     if (isOpen) {
       setIsOpen(false);
     }

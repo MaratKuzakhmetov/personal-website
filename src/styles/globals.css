@@ -52,6 +52,13 @@ body {
     color 0.3s;
 }
 
+body[data-menu-open='true'] {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  touch-action: none;
+}
+
 [data-theme='dark'] {
   --color-primary: #589ddb;
   --color-background: #1a202c;

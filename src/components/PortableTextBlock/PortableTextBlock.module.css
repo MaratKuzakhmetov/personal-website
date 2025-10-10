@@ -14,13 +14,15 @@
 }
 
 .subBlock.aboutPage {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-top: 6rem;
-  padding-bottom: 6rem;
   margin-top: 0;
+}
+
+.subBlock.aboutPage:last-of-type {
+  padding-bottom: 6rem;
 }
 
 .subBlock.aboutPage:nth-child(1) {
@@ -56,10 +58,10 @@
 }
 
 .subBlock.aboutPage .description {
-  font-size: 1.5rem;
+  font-size: 1rem;
 
   @media $wideTablet {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -82,11 +84,11 @@
 }
 
 .subBlock.aboutPage .description h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
 
   @media $wideTablet {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 

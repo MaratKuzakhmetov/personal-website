@@ -1,8 +1,14 @@
 @import '../../styles/vars.css';
 
+.main {
+  flex-grow: 1;
+}
+
 .layoutWrapper {
   min-height: 100vh;
 
   color: var(--color-text);
   background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
 }

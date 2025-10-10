@@ -14,11 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({ globalSettings, children }) => {
     <div className={styles.layoutWrapper}>
       <Header />
 
-      <main className={styles.main}>
-        <div className="container">
-          <div className={styles.mainContent}>{children}</div>
-        </div>
-      </main>
+      <main className={styles.main}>{children}</main>
 
       <Footer data={globalSettings.footer} />
     </div>

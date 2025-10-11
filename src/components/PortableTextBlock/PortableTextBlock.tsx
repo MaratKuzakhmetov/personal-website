@@ -20,7 +20,7 @@ export const PortableTextBlock = ({ content, type = 'default' }: PortableTextBlo
     },
     marks: {
       link: ({ children, value }) => (
-        <a href={value.href} target="_blank" rel="noopener noreferrer">
+        <a className={styles.link} href={value.href} target="_blank" rel="noopener noreferrer">
           {children}
         </a>
       ),

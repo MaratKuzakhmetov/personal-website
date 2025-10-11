@@ -15,9 +15,7 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
   return (
     <div className={styles.aboutContainer}>
-      <div>
-        <PortableTextBlock content={data.content} type="aboutPage" />
-      </div>
+      <PortableTextBlock content={data.content} type="aboutPage" />
     </div>
   );
 };

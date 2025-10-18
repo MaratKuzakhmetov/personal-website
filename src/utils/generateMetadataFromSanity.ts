@@ -12,7 +12,10 @@ interface WithSeo {
 }
 
 export async function generateMetadataFromSanity(data: WithSeo, lang: string): Promise<Metadata> {
-  const imageUrl = data?.image?.src;
+  const imageUrl = data?.image?.src?.replace(
+    'https://cdn.sanity.io/images/srmsnwov/production',
+    'https://markgp.com/sanity-images'
+  );
 
   return {
     title: data?.title ?? 'Default title',

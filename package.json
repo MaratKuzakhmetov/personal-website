@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudflare/workers-types": "^4.20251011.0",
     "@portabletext/types": "^2.0.15",
     "@sanity/image-url": "^1.1.0",
     "@types/styled-components": "^5.1.34",

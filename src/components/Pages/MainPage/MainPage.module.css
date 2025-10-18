@@ -15,10 +15,6 @@
   text-transform: uppercase;
 }
 
-[data-theme='dark'] .title {
-  color: var(--color-text-dark);
-}
-
 .description {
   font-size: 2.5rem;
 

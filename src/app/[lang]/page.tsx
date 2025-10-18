@@ -5,8 +5,13 @@ import { getMainPageByLang } from '@/lib/sanity/queries/mainPage';
 import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 import { SUPPORTED_LANGUAGES } from '@/utils/constants';
 import { notFound } from 'next/navigation';
+import { generateMetadataFromSanity } from '@/utils/generateMetadataFromSanity';
 
 export const runtime = 'edge';
+
+export async function generateMetadata({ params }: { params: { lang: string } }) {
+  return generateMetadataFromSanity(params.lang, getMainPageByLang);
+}
 
 export interface LangPageProps {
   params: Promise<{

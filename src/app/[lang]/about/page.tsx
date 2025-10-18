@@ -5,6 +5,7 @@ import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 import { SlugType } from '@/types/DataTypes';
 import { SUPPORTED_LANGUAGES } from '@/utils/constants';
 import { notFound } from 'next/navigation';
+import { generateMetadataFromSanity } from '@/utils/generateMetadataFromSanity';
 
 export interface LangPageProps {
   params: Promise<{
@@ -13,6 +14,10 @@ export interface LangPageProps {
 }
 
 export const runtime = 'edge';
+
+export async function generateMetadata({ params }: { params: { lang: string } }) {
+  return generateMetadataFromSanity(params.lang, getContentBlocksByLang);
+}
 
 export default async function Home(props: LangPageProps) {
   const params = await props.params;

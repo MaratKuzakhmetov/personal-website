@@ -13,7 +13,8 @@ export async function getMainPageByLang(lang: string) {
             title,
             slug,
             content
-          }
+          },
+          seo
         }`,
     { id }
   );

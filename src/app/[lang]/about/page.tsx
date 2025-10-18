@@ -15,8 +15,15 @@ export interface LangPageProps {
 
 export const runtime = 'edge';
 
-export async function generateMetadata({ params }: { params: { lang: string } }) {
-  return generateMetadataFromSanity(params.lang, getContentBlocksByLang);
+export async function generateMetadata(props: LangPageProps) {
+  const params = await props.params;
+  const { lang } = params;
+  const contentBlocks = await getContentBlocksByLang(lang);
+  const contentAbout = contentBlocks.find(
+    (block: { slug: SlugType }) => block.slug.current === 'about'
+  );
+  const seo = contentAbout.seo;
+  return generateMetadataFromSanity(seo, lang);
 }
 
 export default async function Home(props: LangPageProps) {

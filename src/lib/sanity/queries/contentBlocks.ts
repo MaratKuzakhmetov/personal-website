@@ -33,6 +33,14 @@ export async function getContentBlocksByLang(lang: string) {
               }
             }
           }
+        },
+        seo {
+          title,
+          description,
+          shareUrl,
+          image {
+            ${imageFragment}
+          }
         }
       }`,
     { type: blockType }

@@ -9,8 +9,12 @@ import { generateMetadataFromSanity } from '@/utils/generateMetadataFromSanity';
 
 export const runtime = 'edge';
 
-export async function generateMetadata({ params }: { params: { lang: string } }) {
-  return generateMetadataFromSanity(params.lang, getMainPageByLang);
+export async function generateMetadata(props: LangPageProps) {
+  const params = await props.params;
+  const { lang } = params;
+  const data = await getMainPageByLang(lang);
+  const seo = data?.seo;
+  return generateMetadataFromSanity(seo, lang);
 }
 
 export interface LangPageProps {

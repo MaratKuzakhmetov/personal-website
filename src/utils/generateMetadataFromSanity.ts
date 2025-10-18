@@ -1,44 +1,34 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { SUPPORTED_LANGUAGES } from '@/utils/constants';
 
 interface WithSeo {
-  seo?: {
-    title?: string;
-    description?: string;
-    shareUrl?: string;
-    image?: {
-      asset?: { url?: string };
-    };
+  title?: string;
+  description?: string;
+  shareUrl?: string;
+  image?: {
+    src?: string;
+    alt?: string;
+    dimensions?: { width: number; height: number };
   };
 }
 
-export async function generateMetadataFromSanity<T extends WithSeo>(
-  lang: string,
-  fetcher: (lang: string) => Promise<T | null>
-): Promise<Metadata> {
-  if (!SUPPORTED_LANGUAGES.includes(lang)) {
-    notFound();
-  }
-
-  const data = await fetcher(lang);
-  const seo = data?.seo;
+export async function generateMetadataFromSanity(data: WithSeo, lang: string): Promise<Metadata> {
+  const imageUrl = data?.image?.src;
 
   return {
-    title: seo?.title ?? 'Default title',
-    description: seo?.description ?? 'Default description',
+    title: data?.title ?? 'Default title',
+    description: data?.description ?? 'Default description',
     openGraph: {
-      title: seo?.title,
-      description: seo?.description,
-      images: seo?.image?.asset?.url ? [{ url: seo.image.asset.url }] : undefined,
+      title: data?.title,
+      description: data?.description,
+      images: imageUrl ? [{ url: imageUrl }] : undefined,
       locale: lang,
-      url: seo?.shareUrl,
+      url: data?.shareUrl,
     },
     twitter: {
       card: 'summary_large_image',
-      title: seo?.title,
-      description: seo?.description,
-      images: seo?.image?.asset?.url ? [seo.image.asset.url] : undefined,
+      title: data?.title,
+      description: data?.description,
+      images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
   };
 }

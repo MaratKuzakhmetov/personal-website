@@ -1,4 +1,5 @@
 import { sanityClient } from '../sanity.config';
+import { imageFragment } from '../fragments/imageFragment';
 
 export async function getMainPageByLang(lang: string) {
   const id = `mainPage-${lang}`;
@@ -14,7 +15,14 @@ export async function getMainPageByLang(lang: string) {
             slug,
             content
           },
-          seo
+          seo {
+            title,
+            description,
+            shareUrl,
+            image {
+            ${imageFragment}
+            }
+          }
         }`,
     { id }
   );

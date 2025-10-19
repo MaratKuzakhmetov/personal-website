@@ -93,4 +93,15 @@ export interface NavData {
   de: NavLangTypes;
 }
 
+export interface Seo {
+  title?: string;
+  description?: string;
+  shareUrl?: string;
+  image?: {
+    src?: string;
+    alt?: string;
+    dimensions?: { width: number; height: number };
+  };
+}
+
 export type Languages = 'en' | 'de';

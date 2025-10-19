@@ -12,7 +12,8 @@ import { NavLink } from '@/components/Common/NavLink';
 import { generateNavLink } from '@/utils/generateNavLink';
 import styles from './Header.module.css';
 
-import { LANGUAGES, LOGO_BASE64 } from '@/utils/constants';
+import { LANGUAGES } from '@/utils/constants';
+import { LOGO_BASE64 } from '@/utils/logoBase';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher/ThemeSwitcher';
 
 import { Languages } from '@/types/DataTypes';

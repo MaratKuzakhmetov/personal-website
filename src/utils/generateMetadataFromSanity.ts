@@ -1,17 +1,7 @@
 import type { Metadata } from 'next';
+import { Seo } from '@/types/DataTypes';
 
-interface WithSeo {
-  title?: string;
-  description?: string;
-  shareUrl?: string;
-  image?: {
-    src?: string;
-    alt?: string;
-    dimensions?: { width: number; height: number };
-  };
-}
-
-export async function generateMetadataFromSanity(data: WithSeo, lang: string): Promise<Metadata> {
+export async function generateMetadataFromSanity(data: Seo, lang: string): Promise<Metadata> {
   const imageUrl = data?.image?.src?.replace(
     'https://cdn.sanity.io/images/srmsnwov/production',
     'https://markgp.com/sanity-images'

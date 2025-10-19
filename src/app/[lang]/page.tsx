@@ -6,6 +6,7 @@ import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
 import { SUPPORTED_LANGUAGES } from '@/utils/constants';
 import { notFound } from 'next/navigation';
 import { generateMetadataFromSanity } from '@/utils/generateMetadataFromSanity';
+import { Languages } from '@/types/DataTypes';
 
 export const runtime = 'edge';
 
@@ -19,7 +20,7 @@ export async function generateMetadata(props: LangPageProps) {
 
 export interface LangPageProps {
   params: Promise<{
-    lang: string;
+    lang: Languages;
   }>;
 }
 
@@ -37,7 +38,7 @@ export default async function Home(props: LangPageProps) {
   ]);
 
   return (
-    <Layout globalSettings={globalSettings}>
+    <Layout globalSettings={globalSettings} lang={lang}>
       <MainPage data={mainBlocks} />
     </Layout>
   );

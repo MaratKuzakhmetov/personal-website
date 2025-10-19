@@ -2,14 +2,14 @@ import { Layout } from '@/components/Layout';
 import { AboutPage } from '@/components/Pages/AboutPage';
 import { getContentBlocksByLang } from '@/lib/sanity/queries/contentBlocks';
 import { getGlobalSettingsByLang } from '@/lib/sanity/queries/globalSettings';
-import { SlugType } from '@/types/DataTypes';
+import { Languages, SlugType } from '@/types/DataTypes';
 import { SUPPORTED_LANGUAGES } from '@/utils/constants';
 import { notFound } from 'next/navigation';
 import { generateMetadataFromSanity } from '@/utils/generateMetadataFromSanity';
 
 export interface LangPageProps {
   params: Promise<{
-    lang: string;
+    lang: Languages;
   }>;
 }
 
@@ -44,7 +44,7 @@ export default async function Home(props: LangPageProps) {
   );
 
   return (
-    <Layout globalSettings={globalSettings}>
+    <Layout globalSettings={globalSettings} lang={lang}>
       <AboutPage data={contentAbout} />
     </Layout>
   );

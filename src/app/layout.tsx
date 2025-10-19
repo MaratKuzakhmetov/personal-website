@@ -11,6 +11,16 @@ const ibmPlexSans = IBM_Plex_Sans({
   variable: '--font-ibm-plex-sans',
 });
 
+export const metadata: Metadata = {
+  metadataBase: new URL('https://markgp.com'),
+  robots: { index: true, follow: true },
+  openGraph: { siteName: 'markgp.com' },
+  title: {
+    default: 'Marat Kuzakhmetov – Frontend Engineer',
+    template: '%s | Marat Kuzakhmetov',
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>

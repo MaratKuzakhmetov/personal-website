@@ -33,5 +33,12 @@ export async function generateMetadataFromSanity(data: WithSeo, lang: string): P
       description: data?.description,
       images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: data?.shareUrl,
+    },
   };
 }

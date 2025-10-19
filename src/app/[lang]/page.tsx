@@ -8,6 +8,8 @@ import { notFound } from 'next/navigation';
 import { generateMetadataFromSanity } from '@/utils/generateMetadataFromSanity';
 import { Languages } from '@/types/DataTypes';
 
+import { schema } from '@/utils/schema';
+
 export const runtime = 'edge';
 
 export async function generateMetadata(props: LangPageProps) {
@@ -32,14 +34,22 @@ export default async function Home(props: LangPageProps) {
     notFound();
   }
 
+  const schemaData = schema[lang] ?? schema.en;
+
   const [mainBlocks, globalSettings] = await Promise.all([
     getMainPageByLang(lang),
     getGlobalSettingsByLang(lang),
   ]);
 
   return (
-    <Layout globalSettings={globalSettings} lang={lang}>
-      <MainPage data={mainBlocks} />
-    </Layout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <Layout globalSettings={globalSettings} lang={lang}>
+        <MainPage data={mainBlocks} />
+      </Layout>
+    </>
   );
 }

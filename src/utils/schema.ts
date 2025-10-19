@@ -6,7 +6,7 @@ export const schema = {
     headline: 'Marat Kuzakhmetov – Frontend Engineer',
     description: 'Marat Kuzakhmetov is a professional front-end engineer based in Berlin, Germany.',
     url: 'https://markgp.com/en',
-    image: 'https://markgp.com/assets/avatar.jpeg',
+    image: 'https://markgp.com/assets/avatar.jpg',
     author: {
       '@type': 'Person',
       name: 'Marat Kuzakhmetov',
@@ -25,7 +25,7 @@ export const schema = {
     description:
       'Marat Kuzakhmetov ist ein professioneller Frontend-Entwickler aus Berlin, Deutschland.',
     url: 'https://markgp.com/de',
-    image: 'https://markgp.com/assets/avatar.jpeg',
+    image: 'https://markgp.com/assets/avatar.jpg',
     author: {
       '@type': 'Person',
       name: 'Marat Kuzakhmetov',

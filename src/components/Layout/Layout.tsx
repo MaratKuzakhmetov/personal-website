@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { ReactNode } from 'react';
 
 import { Header } from './Header';
@@ -17,17 +18,20 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = ({ globalSettings, children, lang = 'en' }) => {
   const schemaData = schema[lang];
   return (
-    <div className={styles.layoutWrapper}>
-      <Header />
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </Head>
+      <div className={styles.layoutWrapper}>
+        <Header />
 
-      <main className={styles.main}>{children}</main>
+        <main className={styles.main}>{children}</main>
 
-      <Footer data={globalSettings.footer} />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-    </div>
+        <Footer data={globalSettings.footer} />
+      </div>
+    </>
   );
 };

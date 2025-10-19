@@ -7,6 +7,8 @@ import { SUPPORTED_LANGUAGES } from '@/utils/constants';
 import { notFound } from 'next/navigation';
 import { generateMetadataFromSanity } from '@/utils/generateMetadataFromSanity';
 
+import { schema } from '@/utils/schema';
+
 export interface LangPageProps {
   params: Promise<{
     lang: Languages;
@@ -34,6 +36,8 @@ export default async function Home(props: LangPageProps) {
     notFound();
   }
 
+  const schemaData = schema[lang] ?? schema.en;
+
   const [contentBlocks, globalSettings] = await Promise.all([
     getContentBlocksByLang(lang),
     getGlobalSettingsByLang(lang),
@@ -44,8 +48,14 @@ export default async function Home(props: LangPageProps) {
   );
 
   return (
-    <Layout globalSettings={globalSettings} lang={lang}>
-      <AboutPage data={contentAbout} />
-    </Layout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <Layout globalSettings={globalSettings} lang={lang}>
+        <AboutPage data={contentAbout} />
+      </Layout>
+    </>
   );
 }

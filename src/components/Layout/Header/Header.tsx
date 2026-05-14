@@ -49,7 +49,7 @@ export const Header = () => {
               <Link href={generateNavLink(currentLang, navData.home.link)} className={styles.logo}>
                 <img
                   src={LOGO_BASE64}
-                  alt="Marat Kuzakhmetov"
+                  alt=""
                   width={40}
                   height={40}
                   className={styles.logoImage}

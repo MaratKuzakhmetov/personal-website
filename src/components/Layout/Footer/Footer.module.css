@@ -86,7 +86,7 @@
 .footerText {
   text-align: center;
 
-  color: var(--color-gray-500);
+  color: var(--color-gray-600);
 }
 
 [data-theme='dark'] .footerText {

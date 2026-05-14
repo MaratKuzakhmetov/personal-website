@@ -54,7 +54,7 @@ export const Header = () => {
                   height={40}
                   className={styles.logoImage}
                 />
-                <span>Marat Kuzakhmetov</span>
+                <span className={styles.logoName}>Marat Kuzakhmetov</span>
               </Link>
               <div className={styles.navLinks}>
                 <NavLink href={generateNavLink(currentLang, navData.home.link)}>

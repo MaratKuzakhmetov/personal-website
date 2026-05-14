@@ -104,7 +104,13 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ navData, currentLang }) 
 
   return (
     <>
-      <button className={styles.burgerButton} data-open={isOpen} onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className={styles.burgerButton}
+        data-open={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isOpen}
+      >
         <div />
         <div />
         <div />

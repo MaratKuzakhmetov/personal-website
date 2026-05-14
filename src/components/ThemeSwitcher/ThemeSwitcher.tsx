@@ -22,6 +22,7 @@ export const ThemeSwitcher = () => {
       transition={{ duration: 0.5, ease: 'easeInOut' }}
       onClick={handleClick}
       className={styles.themeButton}
+      aria-label={resolvedTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       <div className={styles.icon} />
     </motion.button>

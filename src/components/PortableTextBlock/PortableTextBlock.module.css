@@ -45,18 +45,18 @@
 }
 
 .subBlock.aboutPage .title {
-  font-size: 1.1875rem;
+  font-size: 19px;
   font-weight: bold;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 .subBlock.aboutPage .description {
-  font-size: 1rem;
+  font-size: 16px;
 
   @media $wideTablet {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 }
 
@@ -65,25 +65,25 @@
 }
 
 .subBlock.aboutPage .description p + p {
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 
 .subBlock.aboutPage .description h2 {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 400;
   margin-bottom: 30px;
 
   @media $wideTablet {
-    font-size: 5.875rem;
+    font-size: 94px;
   }
 }
 
 .subBlock.aboutPage .description h3 {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 400;
 
   @media $wideTablet {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 }
 
@@ -91,8 +91,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media $tablet {
     max-width: 640px;

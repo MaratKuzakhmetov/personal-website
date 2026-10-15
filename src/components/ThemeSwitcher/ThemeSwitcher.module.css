@@ -1,10 +1,10 @@
 .themeButton {
-  font-size: 1.5rem;
+  font-size: 24px;
   background: none;
   border: none;
   cursor: pointer;
   line-height: 1;
-  padding: 0.25rem;
+  padding: 4px;
   transition: color 0.3s ease;
   display: flex;
   justify-content: center;

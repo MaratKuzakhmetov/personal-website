@@ -1,0 +1,30 @@
+@import '../../../styles/vars.css';
+
+.root {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 96px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media $tablet {
+    max-width: 640px;
+  }
+
+  @media $wideTablet {
+    max-width: 768px;
+  }
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.root h2 {
+  margin-top: 24px;
+}
+
+.root p {
+  overflow-wrap: anywhere;
+}

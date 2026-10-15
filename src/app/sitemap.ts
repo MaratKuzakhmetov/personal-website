@@ -3,6 +3,18 @@ import type { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
+      url: 'https://markgp.com/ru',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1.0,
+    },
+    {
+      url: 'https://markgp.com/ru/about',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+    {
       url: 'https://markgp.com/en',
       lastModified: new Date(),
       changeFrequency: 'monthly',

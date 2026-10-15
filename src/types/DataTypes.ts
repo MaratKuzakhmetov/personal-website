@@ -91,6 +91,7 @@ export interface NavLangTypes {
 export interface NavData {
   en: NavLangTypes;
   de: NavLangTypes;
+  ru: NavLangTypes;
 }
 
 export interface Seo {
@@ -104,4 +105,4 @@ export interface Seo {
   };
 }
 
-export type Languages = 'en' | 'de';
+export type Languages = 'ru' | 'en' | 'de';

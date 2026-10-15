@@ -30,7 +30,7 @@ export const Layout: React.FC<LayoutProps> = ({ globalSettings, children, lang =
 
         <main className={styles.main}>{children}</main>
 
-        <Footer data={globalSettings.footer} />
+        <Footer data={globalSettings.footer} lang={lang} />
       </div>
     </>
   );

@@ -7,8 +7,8 @@
   flex-direction: column;
   justify-content: space-around;
 
-  width: 2rem;
-  height: 2rem;
+  width: 32px;
+  height: 32px;
   padding: 0;
 
   cursor: pointer;
@@ -28,8 +28,8 @@
 .burgerButton div {
   position: relative;
 
-  width: 2rem;
-  height: 0.25rem;
+  width: 32px;
+  height: 4px;
 
   transition: all 0.3s linear;
   transform-origin: 1px;
@@ -79,7 +79,7 @@
   width: 100%;
   height: 100%;
   min-height: 100dvh;
-  padding: 5rem 2rem;
+  padding: 80px 32px;
 
   background: var(--color-background);
 
@@ -89,11 +89,11 @@
 }
 
 .menuItem {
-  margin: 1rem 0;
+  margin: 16px 0;
 
   color: var(--color-text);
 
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
 .menuItem a {
@@ -109,9 +109,9 @@
 .languageControls {
   display: flex;
 
-  margin-top: 2rem;
+  margin-top: 32px;
 
-  gap: 1rem;
+  gap: 16px;
 }
 
 .languageButton {
